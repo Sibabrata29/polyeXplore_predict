@@ -11,10 +11,15 @@ from collections import OrderedDict
 
 # --- CONFIG ---
 
-DATA_DIR = 'E:/15 Polyexplore/predictions_polyprop/'
-FEATURES_FILE = DATA_DIR + 'polyeXplore model feature & index.xlsx'
-LIBRARY_FILE = DATA_DIR + 'polyeXplore polymer library data.xlsx'
+# --- CONFIG: use paths relative to this file ---
+from pathlib import Path
 
+APP_DIR = Path(__file__).parent
+DATA_DIR = APP_DIR.parent / "data"
+
+FEATURES_FILE = DATA_DIR / "polyeXplore model feature & index.xlsx"
+LIBRARY_FILE  = DATA_DIR / "polyeXplore polymer library data.xlsx"
+ 
 # --- DATA LOADING --- A
 
 @st.cache_data
@@ -503,4 +508,5 @@ summary_df = pd.DataFrame({
 # -----------------------------------------
 # End of script
 # -----------------------------------------
+
 
