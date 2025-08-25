@@ -1,5 +1,19 @@
 # General imports
 import pandas as pd
+
+try:
+    from rdkit import Chem
+    from rdkit.Chem import Descriptors, Crippen, Lipinski, rdMolDescriptors
+    RDKit_OK = True
+except Exception:
+    RDKit_OK = False
+
+# One-time heads-up if RDKit is unavailable
+if not RDKit_OK:
+    st.info(
+        "RDKit is not available on this deployment. "
+        "Descriptor fields will be shown as blank."
+    )
 import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -618,3 +632,4 @@ st.markdown("<hr style='margin-top: 0; margin-bottom: 4px;'>", unsafe_allow_html
 st.markdown("<p style='text-align: right; font-size: small;'>PolyeXplore Polymer Property Visualization © polyeXplore — Sibabrata De</p>", unsafe_allow_html=True)
 
 # EOF
+
