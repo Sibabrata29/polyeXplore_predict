@@ -5,5 +5,7 @@ seaborn
 streamlit
 openpyxl
 scikit-learn
+rdkit
+py3Dmol
 
 
