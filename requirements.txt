@@ -7,5 +7,6 @@ openpyxl
 scikit-learn
 rdkit
 py3Dmol
+pillow
 
 
